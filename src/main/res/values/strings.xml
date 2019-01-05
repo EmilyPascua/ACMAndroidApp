@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">ACM_app</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="navigation_general">General</string>
+    <string name="navigation_drawer_announcements">Announcements</string>
+    <string name="navigation_drawer_resources">Resources</string>
+    <string name="navigation_drawer_about">About Us</string>
+    <string name="navigation_drawer_contact">Contact</string>
+    <string name="navigation_social_media">Social Media</string>
+    <string name="navigation_social_media_facebook">Facebook</string>
+    <string name="navigation_social_media_instagram">Instagram</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+
+    <string name="action_settings">Settings</string>
+</resources>

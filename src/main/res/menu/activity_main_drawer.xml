@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_announcements"
+            android:icon="@drawable/ic_announcement_black_24dp"
+            android:title="@string/navigation_drawer_announcements" />
+        <item
+            android:id="@+id/nav_resources"
+            android:icon="@drawable/ic_library_books_black_24dp"
+            android:title="@string/navigation_drawer_resources" />
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@drawable/ic_info_outline_black_24dp"
+            android:title="@string/navigation_drawer_about" />
+        <item
+            android:id="@+id/nav_contact"
+            android:icon="@drawable/ic_contact_mail_black_24dp"
+            android:title="@string/navigation_drawer_contact" />
+    </group>
+    <item
+        android:background="@drawable/side_nav_bar"
+        android:title="@string/navigation_social_media">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_instagram"
+                    android:icon="@drawable/ic_iconfinder_2018_social_media_popular_app_logo_instagram_3225191"
+                    android:title="@string/navigation_social_media_instagram" />
+                <item
+                    android:id="@+id/nav_facebook"
+                    android:icon="@drawable/ic_iconfinder_2018_social_media_popular_app_logo_facebook_3225194"
+                    android:title="@string/navigation_social_media_facebook" />
+            </group>
+        </menu>
+    </item>
+
+</menu>
