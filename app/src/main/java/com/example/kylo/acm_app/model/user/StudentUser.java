@@ -1,4 +1,4 @@
-package com.example.kylo.acm_app.model;
+package com.example.kylo.acm_app.model.user;
 
 public class StudentUser {
     private String firstName;

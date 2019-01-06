@@ -2,6 +2,7 @@
     <string name="app_name">ACM_app</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+
     <string name="navigation_general">General</string>
     <string name="navigation_drawer_announcements">Announcements</string>
     <string name="navigation_drawer_resources">Resources</string>
@@ -16,6 +17,8 @@
 
     <string name="action_settings">Settings</string>
 
+    <string name="instagram_url">https://www.instagram.com/calstatela_acm/</string>
+    <string name="facebook_url">https://www.facebook.com/calstatela.acm?ref=br_rs</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

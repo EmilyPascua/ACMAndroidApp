@@ -1,10 +1,9 @@
 package com.example.kylo.acm_app;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
+import android.view.KeyEvent;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -13,12 +12,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    final String INSTA_URL = "https://www.instagram.com/calstatela_acm/";
+    final String FACEBOOK_URL = "https://www.facebook.com/calstatela.acm/";
     NavigationView navigationView = null;
     Toolbar toolbar = null;
+    WebView web;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,19 +95,62 @@ public class MainActivity extends AppCompatActivity
             fragmentTransaction.replace(R.id.fragment_container, announceFragment);
             fragmentTransaction.commit();
         } else if (id == R.id.nav_resources) {
-
+            ResourceFragment resourceFragment = new ResourceFragment();
+            android.support.v4.app.FragmentTransaction fragmentTransaction =
+                    getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container, resourceFragment);
+            fragmentTransaction.commit();
         } else if (id == R.id.nav_about) {
-
+            AboutFragment aboutFragment = new AboutFragment();
+            android.support.v4.app.FragmentTransaction fragmentTransaction =
+                    getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container, aboutFragment);
         } else if (id == R.id.nav_contact) {
-
+            ContactFragment contactFragment = new ContactFragment();
+            android.support.v4.app.FragmentTransaction fragmentTransaction =
+                    getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container, contactFragment);
         } else if (id == R.id.nav_instagram) {
-
+            Intent intent = new Intent(this, WebActivity.class);
+            intent.putExtra("urlString", INSTA_URL);
+            this.startActivity(intent);
         } else if (id == R.id.nav_facebook) {
-
+            Intent intent = new Intent(this, WebActivity.class);
+            intent.putExtra("urlString", FACEBOOK_URL);
+            this.startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public class myWebClient extends WebViewClient
+    {
+        @Override
+        public void onPageStarted(WebView view, String url, Bitmap favicon) {
+            // TODO Auto-generated method stub
+            super.onPageStarted(view, url, favicon);
+        }
+
+        @Override
+        public boolean shouldOverrideUrlLoading(WebView view, String url) {
+            // TODO Auto-generated method stub
+
+            view.loadUrl(url);
+            return true;
+
+        }
+    }
+
+    // To handle "Back" key press event for WebView to go back to previous screen.
+    @Override
+        public boolean onKeyDown(int keyCode, KeyEvent event)
+    {
+        if ((keyCode == KeyEvent.KEYCODE_BACK) && web.canGoBack()) {
+            web.goBack();
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
     }
 }
