@@ -8,13 +8,12 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.example.kylo.acm_app.api.ApiClient;
 import com.example.kylo.acm_app.api.ApiInterface;
-import com.example.kylo.acm_app.model.eventbrite.Events;
-import com.example.kylo.acm_app.model.eventbrite.Search;
+import com.example.kylo.acm_app.model.mlh.Event;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -27,10 +26,8 @@ import retrofit2.Response;
  */
 public class ResourceFragment extends Fragment {
 
-    private TextView textResult;
-    private List<Events> hackathons;
+    private List<Event> hackathons;
     private RecyclerView recyclerView;
-    private RecyclerView.LayoutManager layoutManager;
     private RecyclerAdapter recyclerAdapter;
 
     public ResourceFragment() {
@@ -50,17 +47,14 @@ public class ResourceFragment extends Fragment {
 
     public void LoadJson(final ViewGroup container){
         ApiInterface apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
-        String query = "hackathon";
-        String sortBy = "best";
-        String apiKey = "D3KDL4YXCVE33DW4K2T2";
 
-        Call<Search> call;
-        call = apiInterface.getEvents(query, sortBy, apiKey);
+        Call<List<Event>> call;
+        call = apiInterface.getEvents();
 
-        call.enqueue(new Callback<Search>() {
+        call.enqueue(new Callback<List<Event>>() {
             @Override
-            public void onResponse(Call<Search> call, Response<Search> response) {
-                hackathons = response.body().getEvents();
+            public void onResponse(Call<List<Event>> call, Response<List<Event>> response) {
+                hackathons = filterEvents(response.body());
                 recyclerAdapter = new RecyclerAdapter(hackathons, container.getContext());
                 recyclerView.setLayoutManager(new LinearLayoutManager(container.getContext()));
                 recyclerView.setAdapter(recyclerAdapter);
@@ -68,10 +62,21 @@ public class ResourceFragment extends Fragment {
             }
 
             @Override
-            public void onFailure(Call<Search> call, Throwable t) {
+            public void onFailure(Call<List<Event>> call, Throwable t) {
 
             }
         });
+    }
+
+    public List<Event> filterEvents(final List<Event> allEvents){
+        List<Event> caEvents = new ArrayList<>();
+        for(int i = 0; i < allEvents.size(); i++){
+            //Filter California Events
+            if(allEvents.get(i).getLocation().contains("CA")){
+                caEvents.add(allEvents.get(i));
+            }
+        }
+        return caEvents;
     }
 
 }
