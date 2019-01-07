@@ -14,7 +14,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiClient {
-    public static final String BASE_URL = "https://www.eventbriteapi.com/v3/events/";
+    public static final String BASE_URL = "https://mlh-events.now.sh/";
     public static Retrofit retrofit;
 
     public static Retrofit getApiClient() {

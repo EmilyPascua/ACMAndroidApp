@@ -8,18 +8,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.kylo.acm_app.model.eventbrite.Events;
+import com.example.kylo.acm_app.model.mlh.Event;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.RecyclerViewHolder>{
 
     //List of hackathons
-    private List<Events> mHackathons;
+    private List<Event> mHackathons;
     private Context mContext;
 
-    public RecyclerAdapter(List<Events> hackathons, Context context) {
+    public RecyclerAdapter(List<Event> hackathons, Context context) {
         this.mHackathons = hackathons;
         this.mContext = context;
     }
@@ -60,11 +59,11 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Recycl
         }
 
         void bind(final int position){
-            mEventName.setText(mHackathons.get(position).getName().getName());
-            mEventDescription.setText(mHackathons.get(position).getDescription().getText());
-            mEventStart.setText(mHackathons.get(position).getStart().getLocal());
-            mEventEnd.setText(mHackathons.get(position).getEnd().getTimezone());
-            mEventCreated.setText(mHackathons.get(position).getCreated());
+            mEventName.setText(mHackathons.get(position).getName());
+            mEventDescription.setText(mHackathons.get(position).getEndDate());
+            mEventStart.setText(mHackathons.get(position).getImageUrl());
+            mEventEnd.setText(mHackathons.get(position).getLocation());
+            mEventCreated.setText(mHackathons.get(position).getStartDate());
         }
 
         @Override
