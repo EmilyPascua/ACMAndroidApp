@@ -5,5 +5,5 @@ public class Name {
         return name;
     }
 
-    String name;
+    private String name;
 }

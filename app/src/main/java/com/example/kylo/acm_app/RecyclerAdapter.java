@@ -1,5 +1,6 @@
 package com.example.kylo.acm_app;
 
+import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -10,11 +11,18 @@ import android.widget.TextView;
 import com.example.kylo.acm_app.model.eventbrite.Events;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.RecyclerViewHolder>{
 
     //List of hackathons
-    private ArrayList<Events> mHackathons;
+    private List<Events> mHackathons;
+    private Context mContext;
+
+    public RecyclerAdapter(List<Events> hackathons, Context context) {
+        this.mHackathons = hackathons;
+        this.mContext = context;
+    }
 
 
     @NonNull

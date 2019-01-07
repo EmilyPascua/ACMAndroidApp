@@ -21,11 +21,11 @@ public class Events {
         return created;
     }
 
-    Name name;
-    Description description;
-    Start start;
-    End end;
-    String created;
+    private Name name;
+    private Description description;
+    private  Start start;
+    private End end;
+    private String created;
 
 
 }

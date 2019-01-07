@@ -5,6 +5,6 @@ public class End {
         return timezone;
     }
 
-    String timezone;
+    private String timezone;
 
 }

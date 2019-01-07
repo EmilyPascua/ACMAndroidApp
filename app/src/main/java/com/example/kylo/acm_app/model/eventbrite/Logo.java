@@ -5,6 +5,6 @@ public class Logo {
         return url;
     }
 
-    String url;
+    private String url;
 
 }
