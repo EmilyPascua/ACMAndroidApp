@@ -52,7 +52,7 @@ public class ResourceFragment extends Fragment {
         ApiInterface apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
         String query = "hackathon";
         String sortBy = "best";
-        String apiKey = "D3KDL4YXCVE33DW4K2T2";
+        String apiKey = "";
 
         Call<Search> call;
         call = apiInterface.getEvents(query, sortBy, apiKey);
