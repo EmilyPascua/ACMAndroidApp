@@ -1,14 +1,19 @@
 package com.example.kylo.acm_app;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.kylo.acm_app.model.mlh.Event;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -44,33 +49,38 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Recycl
 
     public class RecyclerViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
-        TextView mEventName;
-        TextView mEventDescription;
+        ImageView mEventImage;
+        TextView mEventLocation;
         TextView mEventStart;
-        TextView mEventEnd;
-        TextView mEventCreated;
+        TextView mEventName;
+        TextView mEventTimeRange;
+
         public RecyclerViewHolder(View itemView){
             super(itemView);
-            mEventName = (TextView) itemView.findViewById(R.id.event_name);
-            mEventDescription = (TextView) itemView.findViewById(R.id.event_description);
+            mEventImage = (ImageView) itemView.findViewById(R.id.event_image_url);
+            mEventLocation = (TextView) itemView.findViewById(R.id.event_location);
             mEventStart = (TextView) itemView.findViewById(R.id.event_start);
-            mEventEnd = (TextView) itemView.findViewById(R.id.event_end);
-            mEventCreated = (TextView) itemView.findViewById(R.id.event_created);
+            mEventName = (TextView) itemView.findViewById(R.id.event_name);
+            mEventTimeRange = (TextView) itemView.findViewById(R.id.event_start_end);
+
+
         }
 
         void bind(final int position){
+            Picasso.with(mContext).load(mHackathons.get(position).getImageUrl()).into(mEventImage);
+            mEventLocation.setText(mHackathons.get(position).getLocation());
+            mEventStart.setText(mHackathons.get(position).getStartDate());
             mEventName.setText(mHackathons.get(position).getName());
-            mEventDescription.setText(mHackathons.get(position).getEndDate());
-            mEventStart.setText(mHackathons.get(position).getImageUrl());
-            mEventEnd.setText(mHackathons.get(position).getLocation());
-            mEventCreated.setText(mHackathons.get(position).getStartDate());
+            mEventTimeRange.setText(mHackathons.get(position).getStartDate() + " - " + mHackathons.get(position).getEndDate());
+            itemView.setOnClickListener(this);
         }
 
         @Override
         public void onClick(View view) {
-//            String urlString = mNews.get(getAdapterPosition()).getUrl();
-//            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(urlString));
-//            mContext.startActivity(browserIntent);
+            Log.e("Hello", "I failed");
+            String urlString = mHackathons.get(getAdapterPosition()).getUrl();
+            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(urlString));
+            mContext.startActivity(browserIntent);
         }
 
     }
