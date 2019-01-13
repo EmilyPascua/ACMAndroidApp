@@ -6,6 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".WebActivity">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        popupTheme="@style/AppTheme.PopupOverlay" />
+
     <WebView
         android:id="@+id/webview"
         android:layout_width="match_parent"

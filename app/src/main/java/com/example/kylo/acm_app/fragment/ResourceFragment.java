@@ -1,7 +1,8 @@
-package com.example.kylo.acm_app;
+package com.example.kylo.acm_app.fragment;
 
 
 import android.os.Bundle;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -9,11 +10,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.kylo.acm_app.R;
+import com.example.kylo.acm_app.RecyclerAdapter;
 import com.example.kylo.acm_app.api.ApiClient;
 import com.example.kylo.acm_app.api.ApiInterface;
 import com.example.kylo.acm_app.model.mlh.Event;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import retrofit2.Call;
@@ -29,6 +33,7 @@ public class ResourceFragment extends Fragment {
     private List<Event> hackathons;
     private RecyclerView recyclerView;
     private RecyclerAdapter recyclerAdapter;
+    private CollapsingToolbarLayout collapsingToolbar;
 
     public ResourceFragment() {
     }
@@ -39,6 +44,10 @@ public class ResourceFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_resource, container, false);
         recyclerView = rootView.findViewById(R.id.hackathons_recycler);
+
+        getActivity().setTitle("");
+        collapsingToolbar = (CollapsingToolbarLayout) rootView.findViewById(R.id.collapsing_toolbar);
+        collapsingToolbar.setTitle("Hackathons");
 
         LoadJson(container);
 
@@ -77,6 +86,7 @@ public class ResourceFragment extends Fragment {
             }
         }
         return caEvents;
+
     }
 
 }
