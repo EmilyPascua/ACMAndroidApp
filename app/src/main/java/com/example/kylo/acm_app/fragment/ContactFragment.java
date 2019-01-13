@@ -1,4 +1,4 @@
-package com.example.kylo.acm_app;
+package com.example.kylo.acm_app.fragment;
 
 
 import android.os.Bundle;
@@ -7,14 +7,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.kylo.acm_app.R;
+
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MainFragment extends Fragment {
+public class ContactFragment extends Fragment {
 
 
-    public MainFragment() {
+    public ContactFragment() {
         // Required empty public constructor
     }
 
@@ -22,8 +24,8 @@ public class MainFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_main, container, false);
+        getActivity().setTitle("Contact");
+        return inflater.inflate(R.layout.fragment_contact, container, false);
     }
 
 }
