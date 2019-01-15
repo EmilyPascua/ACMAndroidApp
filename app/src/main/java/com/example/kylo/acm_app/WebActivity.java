@@ -16,7 +16,7 @@ public class WebActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_web);
+        setContentView(R.layout.web_main);
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -28,7 +28,7 @@ public class WebActivity extends AppCompatActivity {
             urlString = intent.getStringExtra("urlString");
         }
 
-        web = (WebView) findViewById(R.id.webView);
+        web = (WebView) findViewById(R.id.web_view);
         web.setWebViewClient(new myWebClient());
         web.getSettings().setJavaScriptEnabled(true);
         web.loadUrl(urlString);

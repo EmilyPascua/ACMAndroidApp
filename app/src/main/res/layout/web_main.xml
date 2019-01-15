@@ -10,11 +10,11 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
-        popupTheme="@style/AppTheme.PopupOverlay" />
+        android:elevation="1dp"
+        android:theme="@style/AppTheme.AppBarOverlay"/>
 
     <WebView
-        android:id="@+id/webview"
+        android:id="@+id/web_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 

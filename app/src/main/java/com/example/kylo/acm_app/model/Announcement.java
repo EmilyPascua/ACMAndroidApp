@@ -7,7 +7,7 @@ public class Announcement {
     private String author;
     private String message;
     private String image;
-    private Date date;
+    private String date;
 
     public String getTitle() {
         return title;
@@ -41,15 +41,15 @@ public class Announcement {
         this.image = image;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
-    public Announcement(String title, String author, String message, String image, Date date){
+    public Announcement(String title, String author, String message, String image, String date){
         this.title = title;
         this.author = author;
         this.message = message;
