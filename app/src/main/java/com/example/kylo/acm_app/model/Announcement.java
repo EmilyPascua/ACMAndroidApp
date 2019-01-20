@@ -9,6 +9,16 @@ public class Announcement {
     private String image;
     private String date;
 
+    public Announcement() {}
+
+    public Announcement(String title, String author, String message, String image, String date){
+        this.title = title;
+        this.author = author;
+        this.message = message;
+        this.image = image;
+        this.date = date;
+    }
+
     public String getTitle() {
         return title;
     }
@@ -48,13 +58,4 @@ public class Announcement {
     public void setDate(String date) {
         this.date = date;
     }
-
-    public Announcement(String title, String author, String message, String image, String date){
-        this.title = title;
-        this.author = author;
-        this.message = message;
-        this.image = image;
-        this.date = date;
-    }
-
 }
