@@ -27,6 +27,13 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+/* firebase imports */
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -36,10 +43,10 @@ public class AnnounceFragment extends Fragment {
     private RecyclerView recyclerView;
     private RecyclerAnnouncement recyclerAdapter;
     private CollapsingToolbarLayout collapsingToolbar;
+    private List<Announcement> mAnnouncements;
 
     public AnnounceFragment() {
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -55,6 +62,11 @@ public class AnnounceFragment extends Fragment {
 
         return rootView;
     }
+
+//    public void init() {
+//        Firebase
+//    }
+
 
     public void LoadData(final ViewGroup container){
         List<Announcement> hackathons = new ArrayList<>();
