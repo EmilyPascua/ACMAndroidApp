@@ -16,6 +16,14 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
 
+    <string name="mission_title">Our Mission</string>
+    <string name="mission_statement">We are committed to helping students get involved.</string>
+    <string name="about_title">About Us</string>
+    <string name="about_body">We’re the largest computer science club at Cal State LA. We welcome anyone who is intrested to join
+                    our community to learn from each other and build bonds through computer science. By joining our organization
+                    you not only get benefits of becoming part ACM, but also internship, scholarshp, leadership opportunititres and
+                    more!</string>
+
     <string name="action_settings">Settings</string>
 
     <string name="instagram_url">https://www.instagram.com/calstatela_acm/</string>

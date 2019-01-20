@@ -1,6 +1,13 @@
 package com.example.kylo.acm_app.model.mlh;
 
 public class Event {
+    private String name;
+    private String url;
+    private String startDate;
+    private String endDate;
+    private String location;
+    private boolean isHighSchool;
+    private String imageUrl;
 
     public String getName() {
         return name;
@@ -22,10 +29,6 @@ public class Event {
         return location;
     }
 
-    public boolean isHighSchool() {
-        return isHighSchool;
-    }
-
     public Event(String name, String url, String startDate, String endDate, String location, boolean isHighSchool, String imageUrl) {
         this.name = name;
         this.url = url;
@@ -41,11 +44,4 @@ public class Event {
         return imageUrl;
     }
 
-    private String name;
-    private String url;
-    private String startDate;
-    private String endDate;
-    private String location;
-    private boolean isHighSchool;
-    private String imageUrl;
 }
