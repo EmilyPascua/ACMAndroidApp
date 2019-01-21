@@ -1,6 +1,7 @@
 package com.example.kylo.acm_app;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
@@ -20,12 +21,15 @@ public class SplashActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash_screen);
         logo=(ImageView)findViewById(R.id.logo);
 
+        getWindow().setStatusBarColor(Color.parseColor("#20111111"));
+        getWindow().setNavigationBarColor(Color.parseColor("#20111111"));
+
+
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 Intent i = new Intent(SplashActivity.this,MainActivity.class);
                 startActivity(i);
-
                 finish();
             }
         },splashTimeOut);

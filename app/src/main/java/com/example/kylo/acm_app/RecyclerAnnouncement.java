@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.example.kylo.acm_app.model.Announcement;
 import com.squareup.picasso.Picasso;
 
+import java.util.Collections;
 import java.util.List;
 
 public class RecyclerAnnouncement extends RecyclerView.Adapter<RecyclerAnnouncement.RecyclerViewHolder>{
@@ -45,6 +46,9 @@ public class RecyclerAnnouncement extends RecyclerView.Adapter<RecyclerAnnouncem
 
     public void setAnnouncements(List<Announcement> announcements){
         this.mAnnouncements = announcements;
+
+        //So that the announcements display in order
+        Collections.reverse(mAnnouncements);
         notifyDataSetChanged();
     }
 

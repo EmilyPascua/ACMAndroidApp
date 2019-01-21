@@ -16,6 +16,7 @@ import com.example.kylo.acm_app.R;
 import com.example.kylo.acm_app.RecyclerAnnouncement;
 import com.example.kylo.acm_app.model.Announcement;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
@@ -57,7 +58,6 @@ public class AnnounceFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(container.getContext()));
         recyclerView.setAdapter(mAnnouncementAdapter);
 
-        getActivity().setTitle("");
         collapsingToolbar = (CollapsingToolbarLayout) rootView.findViewById(R.id.collapsing_toolbar2);
         collapsingToolbar.setTitle("Announcements");
 
