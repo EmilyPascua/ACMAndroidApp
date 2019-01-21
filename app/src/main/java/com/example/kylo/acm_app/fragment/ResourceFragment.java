@@ -11,13 +11,12 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.kylo.acm_app.R;
-import com.example.kylo.acm_app.RecyclerAdapter;
+import com.example.kylo.acm_app.RecyclerHackathons;
 import com.example.kylo.acm_app.api.ApiClient;
 import com.example.kylo.acm_app.api.ApiInterface;
 import com.example.kylo.acm_app.model.mlh.Event;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 import retrofit2.Call;
@@ -32,7 +31,7 @@ public class ResourceFragment extends Fragment {
 
     private List<Event> hackathons;
     private RecyclerView recyclerView;
-    private RecyclerAdapter recyclerAdapter;
+    private RecyclerHackathons recyclerAdapter;
     private CollapsingToolbarLayout collapsingToolbar;
 
     public ResourceFragment() {
@@ -64,7 +63,7 @@ public class ResourceFragment extends Fragment {
             @Override
             public void onResponse(Call<List<Event>> call, Response<List<Event>> response) {
                 hackathons = filterEvents(response.body());
-                recyclerAdapter = new RecyclerAdapter(hackathons, container.getContext());
+                recyclerAdapter = new RecyclerHackathons(hackathons, container.getContext());
                 recyclerView.setLayoutManager(new LinearLayoutManager(container.getContext()));
                 recyclerView.setAdapter(recyclerAdapter);
                 recyclerAdapter.notifyDataSetChanged();

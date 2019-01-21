@@ -44,10 +44,9 @@
         completions."
     </string>
 
-    //Firebase Database
+    <!-- Announcements -->
     <string name="announcements">"announcements"</string>
 
-    //Firebase Database Fields
     <string name="announcements_title">"title"</string>
     <string name="announcements_author">"author"</string>
     <string name="announcements_message">"message"</string>

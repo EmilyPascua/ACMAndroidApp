@@ -18,7 +18,7 @@
             android:background="?android:attr/selectableItemBackground">
 
             <ImageView
-                android:id="@+id/event_image_url"
+                android:id="@+id/image_url"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:scaleType="centerCrop"
@@ -28,18 +28,18 @@
                 android:id="@+id/shadow_bottom"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
-                android:layout_alignBottom="@id/event_image_url"
+                android:layout_alignBottom="@id/image_url"
                 android:src="@drawable/bottom_shadow" />
 
             <TextView
-                android:id="@+id/event_location"
+                android:id="@+id/subtitle"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
-                android:layout_alignStart="@+id/event_name"
-                android:layout_alignLeft="@+id/event_name"
-                android:layout_alignTop="@+id/event_start_end"
-                android:layout_alignEnd="@id/event_start_end"
-                android:layout_alignRight="@id/event_start_end"
+                android:layout_alignStart="@+id/title"
+                android:layout_alignLeft="@+id/title"
+                android:layout_alignTop="@+id/description"
+                android:layout_alignEnd="@id/description"
+                android:layout_alignRight="@id/description"
                 android:layout_marginStart="1dp"
                 android:layout_marginLeft="1dp"
                 android:layout_marginTop="-90dp"
@@ -54,10 +54,10 @@
                 android:textColor="@android:color/white" />
 
             <FrameLayout
-                android:id="@+id/event_date"
+                android:id="@+id/date_container"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/event_image_url"
+                android:layout_below="@id/image_url"
                 android:layout_alignParentRight="true"
                 android:layout_marginTop="-50dp"
                 android:layout_marginRight="20dp"
@@ -72,7 +72,7 @@
                     android:src="@drawable/ic_date" />
 
                 <TextView
-                    android:id="@+id/event_start"
+                    android:id="@+id/date"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="27dp"
@@ -83,10 +83,10 @@
 
 
             <TextView
-                android:id="@+id/event_name"
+                android:id="@+id/title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/event_image_url"
+                android:layout_below="@id/image_url"
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="16dp"
@@ -97,10 +97,10 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/event_start_end"
+                android:id="@+id/description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/event_name"
+                android:layout_below="@id/title"
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginRight="16dp"

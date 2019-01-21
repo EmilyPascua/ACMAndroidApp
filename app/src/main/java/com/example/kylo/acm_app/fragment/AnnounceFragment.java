@@ -1,7 +1,6 @@
 package com.example.kylo.acm_app.fragment;
 
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.CollapsingToolbarLayout;
@@ -14,7 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.kylo.acm_app.R;
-import com.example.kylo.acm_app.utils.AnnouncementAdapter;
+import com.example.kylo.acm_app.RecyclerAnnouncement;
 import com.example.kylo.acm_app.model.Announcement;
 
 import java.util.HashMap;
@@ -41,7 +40,7 @@ public class AnnounceFragment extends Fragment {
     private RecyclerView recyclerView;
     private CollapsingToolbarLayout collapsingToolbar;
 
-    private AnnouncementAdapter mAnnouncementAdapter;
+    private RecyclerAnnouncement mAnnouncementAdapter;
     private List<Announcement> mAnnouncements;
 
     public AnnounceFragment() {
@@ -54,7 +53,7 @@ public class AnnounceFragment extends Fragment {
 
         View rootView = inflater.inflate(R.layout.fragment_announce, container, false);
         recyclerView = rootView.findViewById(R.id.announcement_recycler);
-        mAnnouncementAdapter = new AnnouncementAdapter(container.getContext(),mAnnouncements);
+        mAnnouncementAdapter = new RecyclerAnnouncement(mAnnouncements,container.getContext());
         recyclerView.setLayoutManager(new LinearLayoutManager(container.getContext()));
         recyclerView.setAdapter(mAnnouncementAdapter);
 
@@ -94,6 +93,8 @@ public class AnnounceFragment extends Fragment {
                 if (mAnnouncements.size() != 0 && mAnnouncements != null) {
                     Log.d("anouncements:","not empty");
                     mAnnouncementAdapter.setAnnouncements(mAnnouncements);
+                }else{
+                    Log.d("Announcements: ", "Announcements are empty");
                 }
             }
 

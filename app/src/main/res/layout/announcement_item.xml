@@ -38,7 +38,7 @@
                 android:layout_alignStart="@+id/announcement_title"
                 android:layout_alignLeft="@+id/announcement_title"
                 android:layout_alignTop="@+id/announcement_message"
-                android:layout_alignEnd="@id/event_start_end"
+                android:layout_alignEnd="@id/description"
                 android:layout_alignRight="@id/announcement_message"
                 android:layout_marginStart="1dp"
                 android:layout_marginLeft="1dp"
@@ -54,7 +54,7 @@
                 android:textColor="@android:color/white" />
 
             <FrameLayout
-                android:id="@+id/event_date"
+                android:id="@+id/date_container"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/announcement_image"

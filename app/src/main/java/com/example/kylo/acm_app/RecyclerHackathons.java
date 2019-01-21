@@ -17,13 +17,13 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.RecyclerViewHolder>{
+public class RecyclerHackathons extends RecyclerView.Adapter<RecyclerHackathons.RecyclerViewHolder>{
 
     //List of hackathons
     private List<Event> mHackathons;
     private Context mContext;
 
-    public RecyclerAdapter(List<Event> hackathons, Context context) {
+    public RecyclerHackathons(List<Event> hackathons, Context context) {
         this.mHackathons = hackathons;
         this.mContext = context;
     }
@@ -32,7 +32,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Recycl
     @NonNull
     @Override
     public RecyclerViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.hackathon_item,viewGroup,false);
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.full_item,viewGroup,false);
         return new RecyclerViewHolder(view);
     }
 
@@ -57,11 +57,11 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Recycl
 
         public RecyclerViewHolder(View itemView){
             super(itemView);
-            mEventImage = (ImageView) itemView.findViewById(R.id.event_image_url);
-            mEventLocation = (TextView) itemView.findViewById(R.id.event_location);
-            mEventStart = (TextView) itemView.findViewById(R.id.event_start);
-            mEventName = (TextView) itemView.findViewById(R.id.event_name);
-            mEventTimeRange = (TextView) itemView.findViewById(R.id.event_start_end);
+            mEventImage = (ImageView) itemView.findViewById(R.id.image_url);
+            mEventLocation = (TextView) itemView.findViewById(R.id.subtitle);
+            mEventStart = (TextView) itemView.findViewById(R.id.date);
+            mEventName = (TextView) itemView.findViewById(R.id.title);
+            mEventTimeRange = (TextView) itemView.findViewById(R.id.description);
 
 
         }
@@ -77,7 +77,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Recycl
 
         @Override
         public void onClick(View view) {
-            Log.e("Hello", "I failed");
             String urlString = mHackathons.get(getAdapterPosition()).getUrl();
             Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(urlString));
             mContext.startActivity(browserIntent);

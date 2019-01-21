@@ -1,11 +1,8 @@
 package com.example.kylo.acm_app;
 
 import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,10 +10,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.kylo.acm_app.model.Announcement;
-import com.example.kylo.acm_app.model.mlh.Event;
 import com.squareup.picasso.Picasso;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class RecyclerAnnouncement extends RecyclerView.Adapter<RecyclerAnnouncement.RecyclerViewHolder>{
@@ -33,7 +28,7 @@ public class RecyclerAnnouncement extends RecyclerView.Adapter<RecyclerAnnouncem
     @NonNull
     @Override
     public RecyclerViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.hackathon_item,viewGroup,false);
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.full_item,viewGroup,false);
         return new RecyclerViewHolder(view);
     }
 
@@ -48,6 +43,11 @@ public class RecyclerAnnouncement extends RecyclerView.Adapter<RecyclerAnnouncem
         return mAnnouncements.size();
     }
 
+    public void setAnnouncements(List<Announcement> announcements){
+        this.mAnnouncements = announcements;
+        notifyDataSetChanged();
+    }
+
     public class RecyclerViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         ImageView mEventImage;
@@ -58,11 +58,11 @@ public class RecyclerAnnouncement extends RecyclerView.Adapter<RecyclerAnnouncem
 
         public RecyclerViewHolder(View itemView){
             super(itemView);
-            mEventImage = (ImageView) itemView.findViewById(R.id.event_image_url);
-            mEventLocation = (TextView) itemView.findViewById(R.id.event_location);
-            mEventStart = (TextView) itemView.findViewById(R.id.event_start);
-            mEventName = (TextView) itemView.findViewById(R.id.event_name);
-            mEventTimeRange = (TextView) itemView.findViewById(R.id.event_start_end);
+            mEventImage = (ImageView) itemView.findViewById(R.id.image_url);
+            mEventLocation = (TextView) itemView.findViewById(R.id.subtitle);
+            mEventStart = (TextView) itemView.findViewById(R.id.date);
+            mEventName = (TextView) itemView.findViewById(R.id.title);
+            mEventTimeRange = (TextView) itemView.findViewById(R.id.description);
 
 
         }
