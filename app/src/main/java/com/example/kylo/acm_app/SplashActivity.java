@@ -2,10 +2,12 @@ package com.example.kylo.acm_app;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
@@ -21,9 +23,9 @@ public class SplashActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash_screen);
         logo=(ImageView)findViewById(R.id.logo);
 
-        getWindow().setStatusBarColor(Color.parseColor("#20111111"));
-        getWindow().setNavigationBarColor(Color.parseColor("#20111111"));
-
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+        }
 
         new Handler().postDelayed(new Runnable() {
             @Override
