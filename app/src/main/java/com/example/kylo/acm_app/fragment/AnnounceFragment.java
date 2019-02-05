@@ -57,6 +57,7 @@ public class AnnounceFragment extends Fragment {
         mAnnouncementAdapter = new RecyclerAnnouncement(mAnnouncements,container.getContext());
         recyclerView.setLayoutManager(new LinearLayoutManager(container.getContext()));
         recyclerView.setAdapter(mAnnouncementAdapter);
+        getActivity().setTitle("");
 
         collapsingToolbar = (CollapsingToolbarLayout) rootView.findViewById(R.id.collapsing_toolbar2);
         collapsingToolbar.setTitle("Announcements");

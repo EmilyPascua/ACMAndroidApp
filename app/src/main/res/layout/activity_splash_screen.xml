@@ -37,7 +37,7 @@
             android:layout_below="@+id/logo"
             android:fontFamily="arial"
             android:gravity="center"
-            android:text="Association of Computer Machinery"
+            android:text="Association of Computing Machinery"
             android:textColor="@color/white"
             android:textSize="13dp"
            android:textStyle="bold"

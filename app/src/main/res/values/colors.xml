@@ -9,6 +9,8 @@
     <color name="colorTextSubtitle">#4e4e4e</color>
     <color name="colorTextTitle">#262626</color>
 
+    <color name="csulaYellow">#FFCE00</color>
+
     <color name="transparent">#00000000</color>
 
 </resources>

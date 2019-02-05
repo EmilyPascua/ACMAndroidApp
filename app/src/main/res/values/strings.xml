@@ -3,6 +3,7 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
+    <!-- Navigation -->
     <string name="navigation_general">General</string>
     <string name="navigation_drawer_home">Home</string>
     <string name="navigation_drawer_announcements">Announcements</string>
@@ -16,19 +17,17 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
 
+    <!--About us-->
     <string name="mission_title">Our Mission</string>
-    <string name="mission_statement">We are committed to helping students get involved.</string>
+    <string name="mission_statement">To serve students at Cal State L.A. and other interested persons in the Los Angeles community.</string>
     <string name="about_title">About Us</string>
-    <string name="about_body">We’re the largest computer science club at Cal State LA. We welcome anyone who is intrested to join
-                    our community to learn from each other and build bonds through computer science. By joining our organization
-                    you not only get benefits of becoming part ACM, but also internship, scholarshp, leadership opportunititres and
-                    more!</string>
+    <string name="about_body">The Association for Computing Machinery is an international scientific and educational organization dedicated to advancing the art, science, engineering, and application of information technology. The ACM Student Chapter at Cal State LA is among the 430 operating student chapters dedicated to the ideals of the national ACM. Our goals are achieved by weekly general meetings, tutoring, member-led workshops, presentations from industry representatives and special events.</string>
 
     <string name="action_settings">Settings</string>
 
     <string name="instagram_url">https://www.instagram.com/calstatela_acm/</string>
     <string name="facebook_url">https://www.facebook.com/calstatela.acm?ref=br_rs</string>
-    <!-- TODO: Remove or change this placeholder text -->
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_login">Sign in</string>
     <!-- Strings related to login -->
