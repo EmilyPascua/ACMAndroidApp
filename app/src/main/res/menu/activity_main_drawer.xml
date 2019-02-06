@@ -40,5 +40,9 @@
             </group>
         </menu>
     </item>
+    <item
+        android:icon="@drawable/ic_contact_mail_black_24dp"
+        android:id="@+id/nav_login"
+        android:title="@string/navigation_login_item"/>
 
 </menu>

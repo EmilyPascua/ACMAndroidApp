@@ -16,7 +16,6 @@ import com.example.kylo.acm_app.R;
 import com.example.kylo.acm_app.RecyclerAnnouncement;
 import com.example.kylo.acm_app.model.Announcement;
 
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
@@ -77,15 +76,7 @@ public class AnnounceFragment extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot singleSnapshot : dataSnapshot.getChildren()) {
-                    Announcement announcement = new Announcement();
-
-                    Map<String, Object> firebaseAnnouncements = (HashMap<String, Object>) singleSnapshot.getValue();
-
-                    announcement.setTitle(firebaseAnnouncements.get(getString(R.string.announcements_title)).toString());
-                    announcement.setAuthor(firebaseAnnouncements.get(getString(R.string.announcements_author)).toString());
-                    announcement.setMessage(firebaseAnnouncements.get(getString(R.string.announcements_message)).toString());
-                    announcement.setImage(firebaseAnnouncements.get(getString(R.string.announcements_image)).toString());
-                    announcement.setDate(firebaseAnnouncements.get(getString(R.string.announcements_date)).toString());
+                    Announcement announcement = singleSnapshot.getValue(Announcement.class);
 
                     mAnnouncements.add(announcement);
                 }

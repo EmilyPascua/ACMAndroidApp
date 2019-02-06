@@ -12,6 +12,7 @@
     <string name="navigation_social_media">Social Media</string>
     <string name="navigation_social_media_facebook">Facebook</string>
     <string name="navigation_social_media_instagram">Instagram</string>
+    <string name="navigation_login_item">Login</string>
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
@@ -44,6 +45,8 @@
         completions."
     </string>
 
+    <!-- Firebase -->
+
     <!-- Announcements -->
     <string name="announcements">"announcements"</string>
 
@@ -52,5 +55,16 @@
     <string name="announcements_message">"message"</string>
     <string name="announcements_image">"image"</string>
     <string name="announcements_date">"date"</string>
+
+    <!-- Users -->
+    <string name="users">"users"</string>
+
+    <string name="users_username">"username"</string>
+    <string name="users_firstname">"firstname"</string>
+    <string name="users_lastname">"lastname"</string>
+    <string name="users_age">"name"</string>
+    <string name="users_position">"position"</string>
+    <string name="users_email">"email"</string>
+    <string name="users_admin">"admin"</string>
 
 </resources>

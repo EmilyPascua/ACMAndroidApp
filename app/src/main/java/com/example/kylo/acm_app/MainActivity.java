@@ -1,8 +1,6 @@
 package com.example.kylo.acm_app;
 
 import android.content.Intent;
-import android.graphics.Color;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -12,10 +10,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.Window;
-import android.view.WindowManager;
 import android.webkit.WebView;
 
+import com.example.kylo.acm_app.activity.LoginActivity;
 import com.example.kylo.acm_app.fragment.AboutFragment;
 import com.example.kylo.acm_app.fragment.AnnounceFragment;
 import com.example.kylo.acm_app.fragment.ContactFragment;
@@ -87,6 +84,10 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.action_settings) {
             return true;
         }
+        if (id == R.id.action_login) {
+            Intent intent = new Intent(this, LoginActivity.class);
+            this.startActivity(intent);
+        }
 
         return super.onOptionsItemSelected(item);
     }
@@ -134,6 +135,9 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_facebook) {
             Intent intent = new Intent(this, WebActivity.class);
             intent.putExtra("urlString", FACEBOOK_URL);
+            this.startActivity(intent);
+        } else if (id == R.id.nav_login) {
+            Intent intent = new Intent(this, LoginActivity.class);
             this.startActivity(intent);
         }
 
