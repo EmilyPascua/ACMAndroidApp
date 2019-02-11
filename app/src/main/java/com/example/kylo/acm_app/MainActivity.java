@@ -27,6 +27,8 @@ public class MainActivity extends AppCompatActivity
 
     final String INSTA_URL = "https://www.instagram.com/calstatela_acm/";
     final String FACEBOOK_URL = "https://www.facebook.com/calstatela.acm/";
+    final String INSTA_NAME = "Instagram";
+    final String FACEBOOK_NAME = "Facebook";
     NavigationView navigationView = null;
     Toolbar toolbar = null;
     WebView web;
@@ -130,10 +132,13 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_instagram) {
             Intent intent = new Intent(this, WebActivity.class);
             intent.putExtra("urlString", INSTA_URL);
+            intent.putExtra("webName", INSTA_NAME);
+
             this.startActivity(intent);
         } else if (id == R.id.nav_facebook) {
             Intent intent = new Intent(this, WebActivity.class);
             intent.putExtra("urlString", FACEBOOK_URL);
+            intent.putExtra("webName", FACEBOOK_NAME);
             this.startActivity(intent);
         }
 

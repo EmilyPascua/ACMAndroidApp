@@ -56,7 +56,7 @@ public class MainFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_announce, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_main, container, false);
         recyclerView = rootView.findViewById(R.id.announcement_recycler);
 
         getActivity().setTitle("");
@@ -64,27 +64,6 @@ public class MainFragment extends Fragment {
 
         return rootView;
     }
-
-//    public void LoadData(final ViewGroup container){
-//        List<Announcement> hackathons = new ArrayList<>();
-//
-//        String lorem = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam cursus pulvinar orci at hendrerit. Suspendisse cursus est a quam porta, vitae faucibus lectus varius. Aliquam ipsum mi, blandit id rhoncus ac, tempus aliquam dui. Phasellus quis consequat nibh, ut commodo sem. ";
-//
-//        Announcement announcement9 = new Announcement("B.S.A.A.", "Chris Redfield", lorem, "https://i.ytimg.com/vi/xLCn88bfW1o/maxresdefault.jpg", "January 15, 1997");
-//        Announcement announcement10 = new Announcement("Resident Evil", "Chris Refield", lorem, "https://i.ytimg.com/vi/xLCn88bfW1o/maxresdefault.jpg", "January 15, 1997");
-//        Announcement announcement11 = new Announcement("Running out of News", "Albert Wesker", lorem, "https://i.ytimg.com/vi/xLCn88bfW1o/maxresdefault.jpg", "January 15, 1997");
-//
-//        hackathons.add(announcement9);
-//        hackathons.add(announcement10);
-//        hackathons.add(announcement11);
-//
-//        Log.e("Size", "size is: " +hackathons.size());
-//
-//        recyclerAdapter = new RecyclerAnnouncement(hackathons, container.getContext());
-//        recyclerView.setLayoutManager(new LinearLayoutManager(container.getContext()));
-//        recyclerView.setAdapter(recyclerAdapter);
-//        recyclerAdapter.notifyDataSetChanged();
-//    }
 
 
     public void retrieveData(final ViewGroup container) {

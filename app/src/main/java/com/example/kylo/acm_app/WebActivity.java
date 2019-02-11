@@ -7,6 +7,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
+import android.view.Window;
+import android.view.WindowManager;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
@@ -22,12 +24,26 @@ public class WebActivity extends AppCompatActivity {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        if(android.os.Build.VERSION.SDK_INT >= 21){
+            Window window = this.getWindow();
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+            window.setStatusBarColor(this.getResources().getColor(R.color.colorPrimaryDark));
+        }
+
         String urlString = "";
+        String nameTitle = "";
         Intent intent = getIntent();
         //Get URL from intent
         if(intent.hasExtra("urlString")){
             urlString = intent.getStringExtra("urlString");
         }
+
+        if(intent.hasExtra("webName")){
+            nameTitle = intent.getStringExtra("webName");
+        }
+
+        setTitle(nameTitle);
 
         web = (WebView) findViewById(R.id.web_view);
         web.setWebViewClient(new myWebClient());
